@@ -1,0 +1,69 @@
+.steps {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 50px auto;
+    padding-bottom: 20px; /* Extra space for scroll bar */
+    width: 100%; /* Full width */
+    height: auto;
+    color: #333;
+    box-shadow: none !important;
+
+    .step {
+        flex: 0 0 auto; /* Prevent steps from shrinking and ensure they take up the necessary width */
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 300px; /* Fixed width for each step */
+        margin-right: 20px; /* Space between steps */
+        padding: 20px 20px 40px; /* Extra padding at the bottom for the number */
+        border-radius: 8px;
+        background-color: $smoke-white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        box-sizing: border-box; /* Ensures padding is included in the width */
+        text-align: center; /* Center-align text for a balanced look */
+        overflow: hidden; /* Ensure content stays within the box */
+
+        &__number {
+            position: relative;
+            margin: 0 auto;
+            width: 40px;
+            height: 40px;
+            background-color: $blue-grey;
+            color: $white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px; /* Space between the number and the title */
+        }
+
+        &__title {
+            margin: 0 auto 10px auto; /* Center title and add space below */
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $blue-grey;
+            text-align: center;
+            white-space: normal; /* Allow text to wrap */
+        }
+
+        &__content {
+            font-size: 1rem;
+            line-height: 1.6em;
+            text-align: left;
+            word-wrap: break-word; /* Ensure long words break correctly */
+            overflow-wrap: break-word; /* Ensure content stays within the box */
+            white-space: normal; /* Allow text to wrap */
+        }
+    }
+
+    /* Hide scrollbar for a cleaner look */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
