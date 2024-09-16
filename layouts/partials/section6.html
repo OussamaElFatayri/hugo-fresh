@@ -1,7 +1,7 @@
 {{- $section6 := .Site.Params.section6 }}
 {{- $title    := index $section6 "title" }}
 {{- $subtitle := index $section6 "subtitle" }}
-{{- $steps    := index $section6 "steps" }} <!-- Renamed from clients to steps for consistency -->
+{{- $steps    := index $section6 "steps" }}
 <section class="section is-medium section-secondary" id="section6">
   <div class="container">
 
@@ -12,10 +12,11 @@
       {{- end }}
     </div>
 
-    <div class="content-wrapper">
-      <div class="steps">
+    <!-- Scrollable container for steps -->
+    <div class="content-wrapper" style="overflow-x: auto;">
+      <div class="steps" style="display: flex; gap: 20px; padding-bottom: 10px; width: max-content;">
         {{- range $index, $step := $steps }}
-        <div class="step">
+        <div class="step" style="min-width: 300px;">
           <div class="step__number">{{ add $index 1 }}</div> <!-- Step number -->
           <div class="step__title">{{ .title }}</div> <!-- Step title -->
           <div class="step__content">

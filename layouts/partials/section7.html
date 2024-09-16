@@ -12,10 +12,10 @@
       {{- end }}
     </div>
 
-    <div class="content-wrapper">
-      <div class="steps">
+    <div class="content-wrapper" style="overflow-x: auto;">
+        <div class="steps" style="display: flex; gap: 20px; padding-bottom: 10px; width: max-content;">
         {{- range $index, $step := $steps }}
-        <div class="step">
+        <div class="step" style="min-width: 300px;">
           <div class="step__number">{{ add $index 1 }}</div> <!-- Step number -->
           <div class="step__title">{{ .title }}</div> <!-- Step title -->
           <div class="step__content">
