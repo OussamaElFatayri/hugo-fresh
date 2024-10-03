@@ -8,6 +8,13 @@
     height: auto;
     color: #333;
     box-shadow: none !important;
+    gap: 20px;
+    
+    /* Hover Effect on Step Boxes */
+    .step:hover {
+        transform: translateY(-5px); /* Lift the box slightly on hover */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    }
 
     .step {
         flex: 0 0 auto; /* Prevent steps from shrinking and ensure they take up the necessary width */
@@ -16,42 +23,47 @@
         vertical-align: top;
         width: 300px; /* Fixed width for each step */
         margin-right: 20px; /* Space between steps */
-        padding: 20px 20px 40px; /* Extra padding at the bottom for the number */
-        border-radius: 8px;
-        background-color: $smoke-white;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0; /* Light border */
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         box-sizing: border-box; /* Ensures padding is included in the width */
         text-align: center; /* Center-align text for a balanced look */
         overflow: hidden; /* Ensure content stays within the box */
+        min-width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         &__number {
             position: relative;
             margin: 0 auto;
-            width: 40px;
-            height: 40px;
-            background-color: $blue-grey;
-            color: $white;
-            border-radius: 50%;
+            font-weight: 600;
+            background-color: $secondary; /* Light blue background for step number */
+            color: #ffffff;            /* White number text */
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 20px; /* Space between the number and the title */
+            border-radius: 50%;
+            margin-bottom: 15px;
         }
 
         &__title {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: $primary; /* Darker title color for contrast */
             margin: 0 auto 10px auto; /* Center title and add space below */
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: $blue-grey;
             text-align: center;
             white-space: normal; /* Allow text to wrap */
         }
 
         &__content {
+            line-height: 1.6;
+            color: #6b6b6b; /* Softer text color for readability */
             font-size: 1rem;
-            line-height: 1.6em;
             text-align: left;
             word-wrap: break-word; /* Ensure long words break correctly */
             overflow-wrap: break-word; /* Ensure content stays within the box */

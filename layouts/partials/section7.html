@@ -2,28 +2,27 @@
 {{- $title    := index $section7 "title" }}
 {{- $subtitle := index $section7 "subtitle" }}
 {{- $steps    := index $section7 "steps" }} <!-- Renamed from clients to steps for consistency -->
-<section class="section is-medium section-secondary" id="section7">
-  <div class="container">
+<section class="section is-medium section-steps" id="section6">
+    <div class="container">
 
-    <div class="title-wrapper has-text-centered">
-      <h2 class="title is-2 light-text is-spaced">{{ $title }}</h2>
-      {{- with $subtitle }}
-      <h3 class="subtitle is-5 light-text">{{ . }}</h3>
-      {{- end }}
-    </div>
-
-    <div class="content-wrapper" style="overflow-x: auto;">
-        <div class="steps" style="display: flex; gap: 20px; padding-bottom: 10px; width: max-content;">
-        {{- range $index, $step := $steps }}
-        <div class="step" style="min-width: 300px;">
-          <div class="step__number">{{ add $index 1 }}</div> <!-- Step number -->
-          <div class="step__title">{{ .title }}</div> <!-- Step title -->
-          <div class="step__content">
-            {{ .content }} <!-- Step content -->
-          </div>
-        </div>
+        <div class="title-wrapper has-text-centered">
+        <h2 class="title is-2" style="color: #0A2342">{{ $title }}</h2>
+        {{- with $subtitle }}
+        <h3 class="subtitle is-5">{{ . }}</h3>
         {{- end }}
-      </div>
+        </div>
+
+        <!-- Scrollable container for steps -->
+        <div class="content-wrapper" style="overflow-x: auto;">
+        <div class="steps" style="display: flex; gap: 20px; padding-bottom: 10px; width: max-content;">
+            {{- range $index, $step := $steps }}
+            <div class="step">
+            <div class="step__number">{{ add $index 1 }}</div> <!-- Step number -->
+            <div class="step__title">{{ .title }}</div> <!-- Step title -->
+            <div class="step__content">{{ .content }}</div> <!-- Step content -->
+            </div>
+            {{- end }}
+        </div>
+        </div>
     </div>
-  </div>
 </section>

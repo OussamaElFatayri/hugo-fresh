@@ -13,6 +13,9 @@ Section Styles
     &.section-secondary {
         background-color: $secondary;
     }
+    &.section-steps {
+        background-color: #f5f8fa;
+    }
     &.section-half {
         height: 75vh !important;
     }
@@ -40,6 +43,15 @@ Section Styles
             color: $muted-grey;
         }
     }
+}
+
+/* Title and Subtitle */
+.title-wrapper h2 {
+    color: #4a4a4a; /* Darker text color for contrast */
+}
+
+.title-wrapper h3 {
+    color: #6b6b6b; /* Slightly lighter subtitle color */
 }
 
 //Divider
